@@ -77,6 +77,11 @@ export const theme: ThemeUserConfig = {
         href: 'https://github.com/24Kgule'
       },
       {
+        icon: "email",
+        label: "Email",
+        href: "mailto:yuishin@foxmail.com"
+      },
+      {
         icon: 'steam',
         label: 'Steam',
         href: 'https://steamcommunity.com/profiles/76561198332315987/'
@@ -96,7 +101,7 @@ export const theme: ThemeUserConfig = {
     blogPageSize: 8,
     /** Share buttons to show */
     // Currently support weibo, x, bluesky
-    share: ['weibo', 'x', 'bluesky']
+    share: ['weibo', 'x']
     /** Enable image captions (default false) */
     // imageCaption: true
   }
@@ -108,21 +113,17 @@ export const integ: IntegrationUserConfig = {
   links: {
     // Friend logbook
     logbook: [
-      { date: '2025-03-16', content: 'Is there a leakage?' },
-      { date: '2025-03-16', content: 'A leakage of what?' },
-      { date: '2025-03-16', content: 'I have a full seat of water, like, full of water!' },
-      { date: '2025-03-16', content: 'Must be the water.' },
-      { date: '2025-03-16', content: "Let's add that to the words of wisdom." }
+      { date: '2026-08-17', content: 'Everything begins.' },
     ],
     // Yourself link info
     applyTip: [
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
-      { name: 'Link', val: 'https://astro-pure.js.org/' },
-      { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
+      { name: 'Link', val: 'https://24kgule.github.io/' },
+      { name: 'Avatar', val: 'https://24kgule.github.io/favicon/favicon.ico' }
     ],
     // Cache avatars in `public/avatars/` to improve user experience.
-    cacheAvatar: false
+    cacheAvatar: true
   },
   // [Search]
   pagefind: true,
@@ -165,7 +166,7 @@ export const integ: IntegrationUserConfig = {
   waline: {
     enable: true,
     // Server service link
-    server: 'https://astro-theme-pure-waline.arthals.ink/',
+    server: 'https://waline-vercel-pearl.vercel.app/',
     // Show meta info for comments
     showMeta: false,
     // Refer https://waline.js.org/en/guide/features/emoji.html
