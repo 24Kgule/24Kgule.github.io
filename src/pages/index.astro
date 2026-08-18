@@ -64,15 +64,17 @@ if (!images[imagePath])
         </p>
         <p>Research Interests: Agent Architecture & AI Infrastructure.</p>
 
-        <a href='https://codetime.dev'
+        <a href='https://codetime.dev' style='display: inline-flex; gap: 6px; align-items: center;'
           ><img
             alt='CodeTime Badge'
             src='https://shields.jannchie.com/endpoint?style=flat-square&color=0284c7&url=https%3A%2F%2Fcodetime.dev%2Fv3%2Fusers%2Fshield%3Fuid%3D37548'
-          /></a
-        >
-        <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
+          />
+          <img
+            alt='CodeTime Badge'
+            src='https://shields.jannchie.com/endpoint?style=flat-square&color=0284c7&url=https%3A%2F%2Fcodetime.dev%2Fv3%2Fusers%2Fshield%3Fuid%3D37548%26metric%3Dtokens'
+          />
+        </a>
       </Section>
-
       {
         /* <Section title='Experience'>
       <Card
@@ -212,7 +214,8 @@ if (!images[imagePath])
         <SkillLayout title='Tools' skills={tools} />
         <SkillLayout title='Typing' skills={typing} />
       </Section>
+
+      <Quote class='mt-12' />
     </div>
-    <Quote class='mt-12' />
   </main>
 </PageLayout>
