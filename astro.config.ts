@@ -40,11 +40,12 @@ export default defineConfig({
 
   // [Adapter]
   // https://docs.astro.build/en/guides/deploy/
-  adapter: vercel({ imageService: true }),
-  output: 'server',
+  // adapter: vercel({ imageService: true }),
+  // output: 'server',
   // Local (standalone)
   // adapter: node({ mode: 'standalone' }),
   // output: 'server',
+  output: 'static',
 
   // [Assets]
   image: {
