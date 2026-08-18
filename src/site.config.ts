@@ -176,6 +176,7 @@ export const integ: IntegrationUserConfig = {
       // search: false,
       pageview: true,
       comment: true,
+      noRss: true,
       locale: {
         reaction0: 'Like',
         placeholder: 'Welcome to comment. (Email to receive replies. Login is unnecessary)'
