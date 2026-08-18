@@ -61,13 +61,6 @@ export const theme: ThemeUserConfig = {
     year: `© ${new Date().getFullYear()}`,
     // year: `© 2019 - ${new Date().getFullYear()}`,
     links: [
-      // Registration link
-      {
-        title: 'Moe ICP 114514',
-        link: 'https://icp.gov.moe/?keyword=114514',
-        style: 'text-sm' // Uno/TW CSS class
-      },
-      // Privacy Policy link
       {
         title: 'Site Policy',
         link: '/terms',
@@ -78,8 +71,16 @@ export const theme: ThemeUserConfig = {
     credits: true,
     /** Optional details about the social media accounts for this site. */
     social: [
-      { icon: 'github', label: 'GitHub', href: 'https://github.com/cworld1/astro-theme-pure' },
-      { icon: 'rss', label: 'RSS', href: '/rss.xml' }
+      {
+        icon: 'github',
+        label: 'GitHub',
+        href: 'https://github.com/24Kgule'
+      },
+      {
+        icon: 'steam',
+        label: 'Steam',
+        href: 'https://steamcommunity.com/profiles/76561198332315987/'
+      }
     ]
   },
 
