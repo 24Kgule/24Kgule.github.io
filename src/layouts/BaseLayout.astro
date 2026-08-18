@@ -12,11 +12,13 @@ import '@/assets/styles/app.css'
 interface Props {
   meta: SiteMeta
   highlightColor?: string
+  highlightImage?: string
 }
 
 const {
   meta: { articleDate, description = config.description, ogImage, title },
   highlightColor,
+  highlightImage,
   ...props
 } = Astro.props
 ---
@@ -29,12 +31,35 @@ const {
 
   <body class='flex justify-center bg-background text-foreground' {...props}>
     {
-      highlightColor && (
+      highlightImage ? (
         <div
-          id='highlight-gradient'
-          class='pointer-events-none absolute start-0 top-0 z-0 h-screen w-full opacity-25'
-          style={`background-image:linear-gradient(${highlightColor},transparent)`}
+          id='highlight-background'
+          aria-hidden='true'
+          class='pointer-events-none absolute start-0 top-0 z-0 h-screen w-full'
+          style={`
+        background-image:
+          linear-gradient(
+            to bottom,
+            hsl(var(--background) / 0.12) 0%,
+            hsl(var(--background) / 0.35) 35%,
+            hsl(var(--background) / 0.75) 70%,
+            hsl(var(--background)) 100%
+          ),
+          url('${highlightImage}');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+      `}
         />
+      ) : (
+        highlightColor && (
+          <div
+            id='highlight-gradient'
+            aria-hidden='true'
+            class='pointer-events-none absolute start-0 top-0 z-0 h-screen w-full opacity-25'
+            style={`background-image: linear-gradient(${highlightColor}, transparent)`}
+          />
+        )
       )
     }
     <div
