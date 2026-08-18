@@ -11,9 +11,10 @@ import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
 import config from '@/site-config'
 
-const languages = ['Html', 'JavaScript', 'CSS', 'Shell']
-const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
-const backend = ['Vercel', 'Waline']
+const languages = ['HTML', 'JavaScript', 'CSS', 'Shell', 'Python', 'C', 'C++', 'Java']
+const llm = ['PyTorch', 'vLLM', 'LLaMA-Factory', 'ms-swift', 'Transformers', 'DeepSpeed', 'SGLang']
+const tools = ['Git', 'Docker', 'Linux', 'VS Code', 'Jupyter Notebook']
+const typing = ['LaTeX', 'Markdown']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -43,60 +44,34 @@ if (!images[imagePath])
       <div class='flex flex-col items-center gap-y-4'>
         <h1 class='text-3xl font-medium'>{config.author}</h1>
         <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-          <Label title='Somewhere'>
+          <Label title='Beijing, China' as='span'>
             <Icon name='location' class='size-5' slot='icon' />
           </Label>
-          <Label
-            title='Source code'
-            as='a'
-            href='https://github.com/cworld1/astro-theme-pure'
-            target='_blank'
-          >
+          <Label title='Github' as='a' href='https://github.com/24Kgule' target='_blank'>
             <Icon name='github' class='size-5' slot='icon' />
           </Label>
         </div>
       </div>
-
-      {/* Get template */}
-      <a
-        href='https://github.com/cworld1/astro-theme-pure'
-        target='_blank'
-        class='flex flex-row items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
-      >
-        <span class='relative flex items-center justify-center'>
-          <span
-            class='absolute size-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-          ></span>
-          <span class='size-2 rounded-full bg-green-400'></span>
-        </span>
-        <p class='font-medium text-muted-foreground'>Get Template</p>
-      </a>
     </section>
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
-        <p class='text-muted-foreground'>Developer / Designer</p>
+        <p class='text-muted-foreground'>PhD Student / AI Researcher</p>
         <p class='text-muted-foreground'>
-          Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione
-          indoctum dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel,
-          at eum oratio possit voluptatum.
+          Hi there.<br /> I'm Yuishin, a PhD student at Chinese Information Processing Laboratory (CIPL),
+          the Institute of Software, Chinese Academy of Sciences (ISCAS) <br /> B.S. in Computer Science
+          and Technology (Brain Science and Artificial Intelligence), Nanjing University.
         </p>
+        <p>Research Interests: Agent Architecture & AI Infrastructure.</p>
+
+        <a href='https://codetime.dev'
+          ><img
+            alt='CodeTime Badge'
+            src='https://shields.jannchie.com/endpoint?style=flat-square&color=0284c7&url=https%3A%2F%2Fcodetime.dev%2Fv3%2Fusers%2Fshield%3Fuid%3D37548'
+          /></a
+        >
         <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
       </Section>
-      {
-        allPostsByDate.length > 0 && (
-          <Section title='Posts'>
-            <ul class='flex flex-col gap-y-1.5 sm:gap-y-2'>
-              {allPostsByDate.map((p) => (
-                <li class='flex flex-col gap-x-2 sm:flex-row'>
-                  <PostPreview post={p} />
-                </li>
-              ))}
-            </ul>
-            <Button title='More posts' class='w-fit self-end' href='/blog' variant='ahead' />
-          </Section>
-        )
-      }
 
       {
         /* <Section title='Experience'>
@@ -127,13 +102,14 @@ if (!images[imagePath])
       />
     </Section> */
       }
+
       <Section title='Education'>
         <Card
           as='a'
-          heading='Lorem ipsum'
-          subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei.'
-          date='August 2021 - July 2025'
-          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+          heading='University of Chinese Academy of Sciences'
+          subheading='Ph.D. Student in Software Engineering, CIPL, ISCAS'
+          date='September 2026 - Present'
+          href='https://www.icip.org.cn/zh/homepage/'
         >
           {
             /* <ul class='ms-4 list-disc text-muted-foreground'>
@@ -144,10 +120,54 @@ if (!images[imagePath])
           <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
         </ul> */
           }
+          <img
+            src='/images/ucas.svg'
+            alt=''
+            aria-hidden='true'
+            class='pointer-events-none absolute end-0 z-0 m-0 -my-3 h-full w-1/3 object-cover opacity-40'
+          />
+        </Card>
+        <Card
+          as='a'
+          heading='Nanjing University'
+          subheading='B.S. in CS (Brain Science & AI), Kuang Yaming Honors School'
+          date='September 2022 - June 2026'
+          href='https://dii.nju.edu.cn/main.htm'
+        >
+          {
+            /* <ul class='ms-4 list-disc text-muted-foreground'>
+          <li>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
+            molestiae laboriosam pariatur!
+          </li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+        </ul> */
+          }
+          <img
+            src='/images/nju.svg'
+            alt=''
+            aria-hidden='true'
+            class='pointer-events-none absolute end-0 z-0 m-0 -my-3 h-full w-1/3 object-cover opacity-40'
+          />
         </Card>
       </Section>
 
-      <Section title='Website List'>
+      {
+        allPostsByDate.length > 0 && (
+          <Section title='Posts'>
+            <ul class='flex flex-col gap-y-1.5 sm:gap-y-2'>
+              {allPostsByDate.map((p) => (
+                <li class='flex flex-col gap-x-2 sm:flex-row'>
+                  <PostPreview post={p} />
+                </li>
+              ))}
+            </ul>
+            <Button title='More posts' class='w-fit self-end' href='/blog' variant='ahead' />
+          </Section>
+        )
+      }
+
+      <!-- <Section title='Website List'>
         <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
           <ProjectCard
             href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
@@ -174,9 +194,9 @@ if (!images[imagePath])
             imagePath='/src/assets/projects/4.avif'
           />
         </div>
-      </Section>
+      </Section> -->
 
-      <Section title='Certifications'>
+      <!-- <Section title='Certifications'>
         <Card
           as='a'
           heading='Lorem ipsum'
@@ -184,12 +204,13 @@ if (!images[imagePath])
           date='July 2024'
           href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
         />
-      </Section>
+      </Section> -->
 
       <Section title='Skills'>
         <SkillLayout title='Languages' skills={languages} />
-        <SkillLayout title='Frontend' skills={frontend} />
-        <SkillLayout title='Backend' skills={backend} />
+        <SkillLayout title='LLM' skills={llm} />
+        <SkillLayout title='Tools' skills={tools} />
+        <SkillLayout title='Typing' skills={typing} />
       </Section>
     </div>
     <Quote class='mt-12' />
