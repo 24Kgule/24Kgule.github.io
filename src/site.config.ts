@@ -120,7 +120,7 @@ export const integ: IntegrationUserConfig = {
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
       { name: 'Link', val: 'https://24kgule.github.io/' },
-      { name: 'Avatar', val: 'https://24kgule.github.io/favicon/favicon.ico' }
+      { name: 'Avatar', val: 'https://24kgule.github.io/favicon/favicon.png' }
     ],
     // Cache avatars in `public/avatars/` to improve user experience.
     cacheAvatar: true

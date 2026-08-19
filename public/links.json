@@ -4,12 +4,20 @@
       "id_name": "cf-links",
       "desc": "Common links included in circle friends",
       "link_list": [
+        {
+          "name": "Yuishin's Homepage",
+          "intro": "My compass is curiosity💫",
+          "link": "https://24kgule.github.io/",
+          "avatar": "https://24kgule.github.io/favicon/favicon.png"
+        }
       ]
     },
     {
       "id_name": "inactive-links",
       "desc": "Inactive or rule-breaking friends",
-      "link_list": []
+      "link_list": [
+        
+      ]
     },
     {
       "id_name": "special-links",
